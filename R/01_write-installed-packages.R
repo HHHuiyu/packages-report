@@ -15,4 +15,15 @@
 ## it an example of what yours should look like
 
 ## when this script works, stage & commit it and the csv file
-## PUSH!
+## PUSH
+
+library(tidyverse)
+inst_pcg0 <- read_csv("data/installed-packages.csv")
+sub_pcg <- inst_pcg0 %>% select(Package, LibPath, Version, Priority, Built)
+
+
+write_csv(sub_pcg, file.path("data/", "installed-packages.csv"))
+
+
+
+
